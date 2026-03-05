@@ -2,7 +2,12 @@ import sys
 import cv2
 import numpy as np
 import joblib
+import subprocess
+import sys
 from PIL import Image
+
+
+
 
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QPushButton,
@@ -11,6 +16,9 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QPixmap, QImage
 from PyQt6.QtCore import Qt
 
+
+# Realiza la ejecución del entrenamiento y exporta los modelos entrenados
+subprocess.run([sys.executable, 'entrenamiento.py'], check=True)
 # =====================================================
 # CONFIGURACIÓN DETECTOR FACIAL
 # =====================================================
