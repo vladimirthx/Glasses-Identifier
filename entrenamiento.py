@@ -1,3 +1,4 @@
+# Importe de bibliotecas
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
@@ -14,7 +15,7 @@ import joblib
 faces = fetch_olivetti_faces()
 X = faces.data
 
-# Etiquetas manuales
+# Asignación de etiquetas manuales
 y_glasses = np.array([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0,
@@ -44,7 +45,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 if __name__ == "__main__":
 
-    # 1. Definir los 5 modelos (Asegúrate de que SVM tenga probability=True)
+    # 1. Definir los 5 modelos
     modelos = {
         "Neural_Network": MLPClassifier(hidden_layer_sizes=(256, 128, 64), activation='relu', solver='adam',
                                         max_iter=1000, random_state=42),
